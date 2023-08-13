@@ -57,9 +57,6 @@
         myCar.priceless = true
       }
       return myCar
-
-
-
     }  
 
 
@@ -70,6 +67,11 @@
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
+      if (arr.length % 2 === 0){
+        return true
+      } else if (arr.length % 2 !== 0){
+        return false
+      }
 
     }
 
@@ -79,7 +81,12 @@
     // 🧠 Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
-    function firstOrLast() {
+    function firstOrLast(firstArr, Boolean) {
+      if (Boolean === true){
+        return firstArr[0]
+      } else {
+        return firstArr.at(-1)
+      }
 
     }
 
@@ -89,7 +96,9 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    function pushElement() {
+    function pushElement(secArr, anyValue) {
+      secArr.push(anyValue)
+      return secArr
 
     }
 
@@ -105,7 +114,18 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
+    function stripX(myString) {
+      let result = []
+      myString.split("")
+      for (let i in myString){
+        if (myString.at(i) !== 'x'){
+          result.push(myString.at(i))
+        } else if(myString.at(i) === 'x'){
+          null
+        }
+      }
+      return result.join("")
+
 
     }
 
@@ -118,7 +138,19 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
+    function stripChar(string, char) {
+      let stripResult = []
+
+      string.split('')
+
+      for (let i in string){
+        if (string.at(i) !== char){
+          stripResult.push(string.at(i))
+        } else if(string.at(i) === char){
+          null
+        }
+      }
+      return stripResult.join('')
 
     }
 
@@ -131,7 +163,19 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
+    function getProps(obj) {
+      let finalArray = [] // final array that will be returned containing the property names of the object
+
+      for (let property in obj){
+        if(property !== 'age' && property !== 'married'){
+          finalArray[finalArray.length] = property
+
+        }
+      }
+
+      return finalArray
+
+
 
     }
 
